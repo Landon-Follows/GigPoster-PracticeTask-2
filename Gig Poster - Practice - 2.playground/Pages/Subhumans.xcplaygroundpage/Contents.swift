@@ -34,7 +34,99 @@ let lightRed = Color(hue: 10, saturation: 80, brightness: 80, alpha: 75)
 
 // Begin your solution here...
 
+// draw background
 
+canvas.fillColor = yellow
+
+canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 600)
+
+// draw brown parallelograms
+
+canvas.drawShapesWithBorders = false
+
+canvas.drawShapesWithFill = true
+
+
+// Loop for Brown & Purple Parallelograms first and second row
+
+for y in stride (from: 50, through: 325, by: 175){
+    
+    for x in stride (from: -130, through: 380, by: 160){
+    
+        var brownParallelogram: [Point] = []
+        
+        brownParallelogram.append(Point(x: x, y: y))
+        brownParallelogram.append(Point(x: x+150, y: y))
+        brownParallelogram.append(Point(x: x+200, y: y+100))
+        brownParallelogram.append(Point(x: x+50, y: y+100))
+        
+        if x == -130 || x == 190{
+            
+            canvas.fillColor = brown
+        }
+        
+        if x == 30 || x == 350{
+            
+            canvas.fillColor = purple
+        }
+        
+        canvas.drawCustomShape(with: brownParallelogram)
+        
+    }
+}
+
+// draw red parallelograms
+
+canvas.drawShapesWithBorders = false
+
+canvas.drawShapesWithFill = true
+
+canvas.fillColor = lightRed
+
+for x in stride (from: -130, through: 380, by: 160) {
+    
+    var redParallelogram: [Point] = []
+    
+    redParallelogram.append(Point(x: x, y: 135))
+    redParallelogram.append(Point(x: x+150, y: 135))
+    redParallelogram.append(Point(x: x+200, y: 240))
+    redParallelogram.append(Point(x: x+50, y: 240))
+    
+    canvas.drawCustomShape(with: redParallelogram)
+    
+}
+
+// Draw text above parallelograms
+
+canvas.drawText(message: "friday, april 13 1984", at: Point(x: 17, y: 430), size: 10)
+
+canvas.drawText(message: "advance $6.50, door $7.50", at: Point(x: 17, y: 415), size: 10)
+
+canvas.drawText(message: "no age limit", at: Point(x: 17, y: 400), size: 10)
+
+canvas.drawText(message: "all olympic auditorium", at: Point(x: 150, y: 430), size: 10)
+
+canvas.drawText(message: "1801 a. grand ave.", at: Point(x: 150, y: 415), size: 10)
+
+canvas.drawText(message: "los angeles, california", at: Point(x: 150, y: 400), size: 10)
+
+canvas.drawText(message: "with the tourist", at: Point(x: 275, y: 430), size: 10)
+
+canvas.drawText(message: "muti death cooperations", at: Point(x: 275, y: 415), size: 10)
+
+canvas.drawText(message: "new regime & red scare", at: Point(x: 275, y: 400), size: 10)
+
+canvas.drawText(message: "subhumans", at: Point(x: 17, y: 330), size: 50)
+
+
+//draw grid
+///canvas.drawShapesWithBorders = true
+///canvas.drawShapesWithFill = false
+///for y in stride (from: 0, through: 600, by: 50){
+///for x in stride (from: 0, through: 400, by: 50){
+///canvas.drawRectangle(at: Point(x: x, y: y), width: 50, height: 50)
+///}
+///}
 /*:
  ## Use Source Control
  
